@@ -1,0 +1,29 @@
+\section{Introducció}
+En una transmissió d'informació per un canal existeix la possibilitat que la
+informació enviada no arribi correctament al receptor. Durant la transmissió
+poden produir-se errors per diferents motius i per això necessitam
+mecanismes per saber si la informació rebuda es correspon amb l'enviada. 
+
+El mecanisme més immediat per solucionar aquest problema és la simple
+repetició de cada símbol transmès un nombre \emph{n} de vegades. Si els \emph{n}
+símbols rebuts son iguals, es suposarà que en cap transmissió hi ha hagut error.
+Si els \emph{n} símbols rebuts no son tots iguals, implicarà que hi ha hagut
+error en alguna de les transmissions i s'identificarà com a símbol transmès el
+que aparegui més vegades en la repetició. 
+ 
+Quan més vegades s'envii el símbol la probabilitat d'error disminuirà, però a
+costa d'incrementar el temps de transmissió. Aquest mecanisme planteja el
+compromís entre la velocitat d'enviament dels missatges i la seva fiabilitat.
+Per això, existeixen mètodes més sofisticats que aconsegueixen una major
+velocitat de transmissió dels missatges mitjançant una codificació adequada. 
+
+Aquest mètodes s'anomenen els codis detectors i correctors d'errors. La seva
+funció és detectar i corregir erros en la transmissió d'un missatge sense
+necessitat de repetir la transmissió. Bàsicament consisteix en incloure
+informació redundant en la transmissió per permetre al receptor detectar
+que s'ha produït un error i deduir quin és el caràcter que s'ha transmès. 
+
+En aquest document, estudiarem un tipus de codi detector i corrector d'errors.
+En concret, el codi que analitzarem  serà el Reed-Solomon. També veurem
+exemples d'aplicació d'aquest codi sobre diferents tipus de sistemes
+(dispositius d'emmagatzematge, telèfons mòbils, mòdems, etc). 

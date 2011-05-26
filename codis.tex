@@ -1,0 +1,38 @@
+\section{Codis Reed-Solomon}
+El Reed-Solomon és un codi cíclic no binari i constitueix una subclasse dels
+codis BCH. Els codis cíclics son una subclasse dels codis de bloc estàndard de
+detecció i correcció d'errors que protegeixen la informació contra errors en les
+dades transmeses sobre un canal de comunicació. Aquest tipus de codi pertany a
+la categoria FEC(\emph{Forward Error Correction}), és a dir, corregeix les dades
+alterades al receptor i per fer-ho utilitza bits addicionals que permeten
+aquesta recuperació a posteriori. 
+
+El codi va ser inventat per Irving S. Reed y Gustave Solomon l'any 1960.
+Actualment s'utilitza en àrees com els CDs, telèfons mòbils, sondes espacials,
+en comunicacions per satèl·lit, en la transmissió digital de televisió, en
+sistemes xDSL de comunicació per cable, etc. 
+
+Un codificador Reed-Solomon agafa un bloc d'informació digital i afegeix bits
+redundants. Els error poden sorgir durant la transmissió o emmagatzematge de
+informació per diversos motius (renou, interferències, retxades en els discs,
+etc.). El descodificador Reed-Solomon processa cada bloc i intenta corregir els
+errors i recuperar la informació original. El nombre i tipus d'error que poden
+ser corregits depenen de les característiques del codi Reed-Solomon. 
+
+Un codi Reed-Solomon s'especifica com RS(n,k) amb símbols de \emph{s} bits. Això
+significa que el codificador agafa \emph{k} símbols dels \emph{s} bits i afegeix
+símbols de paritat per fer una paraula codi de \emph{n} símbols. Existeixen
+$n-k$ símbols de paritat de \emph{s} bits cada un. Un descodificador pot corregir
+fins a \emph{t} símbols que contenen error en una paraula codi, on $2t=n-k$. 
+
+\subsection{Exemple}
+Un codi popular Reed-Solomon és RS(255, 223) amb símbols de 8 bits.
+Cada paraula codi conté 255 bytes de paraula codi, dels quals 223 bytes
+son dades i 32 bytes son de paritat. 
+
+Per aquest codi es té $N = 255, k = 223, s = 8$ i per tant: 
+
+$$2t = 32, t = 16$$
+
+El descodificador pot corregir qualsevol error de 16 símbols en la paraula codi,
+és a dir, errors de fins a 16 bytes en qualsevol lloc de la paraula.
