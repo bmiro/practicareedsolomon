@@ -1,10 +1,27 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{scrartcl}
+\usepackage[utf8x]{inputenc}
 \usepackage[catalan]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{url}
-\usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage{amsmath}
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{url}
+
+% aptitude install texlive-fonts-extra
+\usepackage{newcent} %font mes wapa
+
+\graphicspath{{diagrames/}}
+
+% Estil de seccions
+\titleformat{\section}{\large\sectfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\sectfont}{\thesubsection}{1em}{}
+% Estil numeracio subseccions http://help-csli.stanford.edu/tex/latex-sections.shtml#number
+%\def\thesubsection{\alph{subsection})}
 
 \makeindex
 \title{Teoria de la Informació i de la Codificació: \\ Pràctica codis
@@ -23,5 +40,6 @@ Mateu\thanks{bartomeumiro@gmail.com}}
 \input{introduccio}
 \input{codis}
 \input{aplicacions}
+\input{peu.tex}
 
 \end {document}
