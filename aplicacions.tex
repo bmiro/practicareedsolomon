@@ -4,12 +4,12 @@ exemple els CDs, telèfons mòbils, sondes espacials, en comunicacions per
 satèl·lit, en la transmissió digital de televisió, en sistemes xDSL de
 comunicació per cable, etc.
 
-En aquest apartat veurem diferents aplicacions del codis reed-solomon
+En aquest apartat veurem diferents aplicacions del codis Reed-Solomon
 i amb els paràmetres que s'utilitzen a cada cas. 
 
 \subsection{CD}
-Els CDs per la detecció i correció d'errors utilitza els Cross-Interleave
-Reed-Solomon Code (CIRC). CIRC és un mètode de detecció i correció d'errors que
+Els CDs per la detecció i correcció d'errors utilitza els Cross-Interleave
+Reed-Solomon Code (CIRC). CIRC és un mètode de detecció i correcció d'errors que
 consisteix en afegir 8 bytes de paritat. Això es fa en dues etapes, anomenades
 C1 i C2. En cada passa s'afegeixen 4 bytes de paritat. 
 
@@ -19,10 +19,10 @@ configuració de (32, 28), mentres que a C2 tenim (28, 24). Amb aquest esquema
 podem corregir fins a 500 bytes. 
 
 \subsection{DVD}
-Els DVD utilitzen codis reed solomon, anomenats Reed-Solomon Product-Code
+Els DVD utilitzen codis Reed-Solomon, anomenats Reed-Solomon Product-Code
 (RS-PC). Els RS-PC, al igual que els CIRC són la combinació de dos codis però
-de major longuitud. En aquest cas tenim RS(208,192) i RS(182,172), on cada
-simbol es 1 byte. Al ser més llargs, aquests codis ens proporcionaran un major
+de major longitud. En aquest cas tenim RS(208,192) i RS(182,172), on cada
+símbol es 1 byte. Al ser més llargs, aquests codis ens proporcionaran un major
 nombre de bits a poder corregir. Concretament, 2200 bytes. 
      
 \subsection{Blu-Ray}
@@ -30,14 +30,14 @@ Els Blu-Ray utilitzen codis Reed-Solomon RS(248, 216). Cada paraula es de 248
 bits, dels quals 216 son de dades i 32 de paritat.
 
 \subsection{DVB}
-Digital Video Broadcasting (DVB) és una organizació que promou estàndards
-de televisión digital. 
+Digital Video Broadcasting (DVB) és una organització que promou estàndards
+de televisió digital. 
 
-Els sistemes DVB distribueixen les dades per satèlit, cable, etc. En totes les
-variants s'utilitzen codis Reed Solomon per la detecció i control d'errors. La
+Els sistemes DVB distribueixen les dades per satèl·lit, cable, etc. En totes les
+variants s'utilitzen codis Reed-Solomon per la detecció i control d'errors. La
 seva configuració es la mateixa en totes les variants del DVB. 
 
-En aquest cas, s'introdueixen 16 bytes de redundancia per cada paquet de 188
+En aquest cas, s'introdueixen 16 bytes de redundància per cada paquet de 188
 bytes de dades. Per tant, la configuració és RS(204, 188). 
 
  
