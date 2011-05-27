@@ -7,20 +7,37 @@ comunicació per cable, etc.
 En aquest apartat veurem diferents aplicacions del codis reed-solomon
 i amb els paràmetres que s'utilitzen a cada cas. 
 
+\subsection{CD}
+Els CDs per la detecció i correció d'errors utilitza els Cross-Interleave
+Reed-Solomon Code (CIRC). CIRC és un mètode de detecció i correció d'errors que
+consisteix en afegir 8 bytes de paritat. Això es fa en dues etapes, anomenades
+C1 i C2. En cada passa s'afegeixen 4 bytes de paritat. 
+
+El calcul de la paritat es igual en cada cas. La única diferència es el nombre
+de bytes utilitzats en cada cas per obtenir la paritat. A C1 tenim una
+configuració de (32, 28), mentres que a C2 tenim (28, 24). Amb aquest esquema
+podem corregir fins a 500 bytes. 
+
 \subsection{DVD}
 Els DVD utilitzen codis reed solomon, anomenats Reed-Solomon Product-Code
-(RS-PC). Els RS-PC tenen els següents paràmetres: 
-
-\begin{itemize}
- \item $n = $
- \item $k = $ 
-\end{itemize}
-
-%Deteccio i correcció de 2200 bytes.
-
-      
-
+(RS-PC). Els RS-PC, al igual que els CIRC són la combinació de dos codis però
+de major longuitud. En aquest cas tenim RS(208,192) i RS(182,172), on cada
+simbol es 1 byte. Al ser més llargs, aquests codis ens proporcionaran un major
+nombre de bits a poder corregir. Concretament, 2200 bytes. 
+     
+\subsection{Blu-Ray}
+Els Blu-Ray utilitzen codis Reed-Solomon RS(248, 216). Cada paraula es de 248
+bits, dels quals 216 son de dades i 32 de paritat.
 
 \subsection{DVB}
+Digital Video Broadcasting (DVB) és una organizació que promou estàndards
+de televisión digital. 
 
-\subsection{Blu-Ray}
+Els sistemes DVB distribueixen les dades per satèlit, cable, etc. En totes les
+variants s'utilitzen codis Reed Solomon per la detecció i control d'errors. La
+seva configuració es la mateixa en totes les variants del DVB. 
+
+En aquest cas, s'introdueixen 16 bytes de redundancia per cada paquet de 188
+bytes de dades. Per tant, la configuració és RS(204, 188). 
+
+ 
